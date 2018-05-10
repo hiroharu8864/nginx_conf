@@ -1,0 +1,13 @@
+[Unit]
+Description=Calbi service on Spling boot in Tomcat  Servlet Container
+After=syslog.target network.target
+ 
+[Service]
+Type=simple
+WorkingDirectory=/opt/tomcat/spring
+ExecStart=/usr/bin/java -jar /opt/tomcat/calbi/Spring.jar
+RestartSec=10
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
